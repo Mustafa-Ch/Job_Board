@@ -8,10 +8,14 @@ const userRouter = require("./routes/user");
 const jobRouter = require("./routes/job");
 const newsLetterSent = require("./automation/newsletter");
 const applicationRouter = require("./routes/application");
-require("dotenv").config({ path: "./config/config.env" })
+require("dotenv").config({ path: "./config/config.env" });
 
 const options = {
-  origin: [process.env.FRONTEN_URL, process.env.FRONTEN_URL_2],
+  origin: [
+    process.env.FRONTEN_URL,
+    process.env.FRONTEN_URL_2,
+    process.env.DOMAIN,
+  ],
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
 };
@@ -31,10 +35,16 @@ app.use("/application/v1", applicationRouter);
 // Error Middleware
 app.use(errorMiddleware);
 
-
-
 // Email Automation
 newsLetterSent();
+
+//deployment purpose
+app.get('*',(req,res,next)=>{
+  res.status(200).json({
+    message:'bad request'
+  })
+})
+
 app.listen(process.env.PORT, () => {
   console.log(`Server listening at port ${process.env.PORT}`);
 });

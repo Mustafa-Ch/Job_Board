@@ -85,6 +85,8 @@ const createUser = async (req, res, next) => {
     res.cookie("token", token, {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       httpOnly: true,
+       secure: true,
+    sameSite: "None"
     });
 
     return res.status(200).json({
@@ -100,12 +102,16 @@ const createUser = async (req, res, next) => {
 const logoutUser = async (req, res, next) => {
   res.clearCookie("token", {
     httpOnly: true,
+    secure: true,
+    sameSite: "None",
+    expires: new Date(0) 
   });
   return res.status(200).json({
     success: true,
-    message: "You are successfully logout...",
+    message: "You are successfully logged out...",
   });
 };
+
 
 const loginUser = async (req, res, next) => {
   try {
@@ -126,11 +132,17 @@ const loginUser = async (req, res, next) => {
       return next(new ErrorHandler("Role is incorrect"));
     }
 
-    const token = jwt.sign({ _id: user._id }, process.env.JSON_WEB_TOKEN_SECRET, { expiresIn: "7d" });
+    const token = jwt.sign(
+      { _id: user._id },
+      process.env.JSON_WEB_TOKEN_SECRET,
+      { expiresIn: "7d" }
+    );
 
     res.cookie("token", token, {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       httpOnly: true,
+      secure: true,
+      sameSite: "None",
     });
     return res.status(200).json({
       sccess: true,
@@ -241,13 +253,19 @@ const updatePassword = async (req, res, next) => {
     user.password = hashPassword;
     await user.save();
 
-    const token = await jwt.sign({ _id: user._id }, process.env.JSON_WEB_TOKEN_SECRET, {
-      expiresIn: "7d",
-    });
+    const token = await jwt.sign(
+      { _id: user._id },
+      process.env.JSON_WEB_TOKEN_SECRET,
+      {
+        expiresIn: "7d",
+      }
+    );
 
     res.cookie("token", token, {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       httpOnly: true,
+      secure: true,
+      sameSite: "None",
     });
 
     return res.status(200).json({
@@ -275,7 +293,7 @@ const forgotPassword = async (req, res, next) => {
     await user.save();
     const html = `<p>Hi ${user.fullName} Your Password Reset Link Here Click Below To Reset Your Password</p>
   </br>
-  <a href='http://localhost:5173/resetPassword/${token}'>${token}</a>
+  <a href='${process.env.DOMAIN}/resetPassword/${token}'>${token}</a>
   `;
     await forgotMail(user.email, html);
     return res.status(200).json({
@@ -315,13 +333,19 @@ const resetPassword = async (req, res, next) => {
     const hashPassword = await bcrypt.hash(password, 10);
     user.password = hashPassword;
     await user.save();
-    const accessToken = jwt.sign({ _id: user._id }, process.env.JSON_WEB_TOKEN_SECRET, {
-      expiresIn: "7d",
-    });
+    const accessToken = jwt.sign(
+      { _id: user._id },
+      process.env.JSON_WEB_TOKEN_SECRET,
+      {
+        expiresIn: "7d",
+      }
+    );
 
     res.cookie("token", accessToken, {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       httpOnly: true,
+      secure: true,
+      sameSite: "None",
     });
 
     return res.status(200).json({
