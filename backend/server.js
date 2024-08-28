@@ -14,7 +14,7 @@ const options = {
   origin: [
     process.env.FRONTEN_URL,
     process.env.FRONTEN_URL_2,
-    process.env.DOMAIN,
+    'https://job-board-virid-beta.vercel.app',
   ],
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
