@@ -1,0 +1,901 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif;
+    overflow-x: hidden;
+}
+
+.container{
+max-width: 92%;
+margin:0 auto;
+}
+
+@media(min-width:600px){
+    .container{
+        max-width:1000px;
+        padding:10px;
+    }
+}
+@media(min-width:1200px){
+    .container{
+        max-width: 1200px;
+    }
+}
+.hero{
+    margin-top: 100px;
+}
+.hero h1{
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    text-align: center;
+}
+.hero h2{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(128, 128, 128);
+    margin-top: 20px;
+    text-align: center;
+}
+.box {
+    background-color: #DFDF07;
+    max-width: 900px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 40px auto;
+    border-radius: 30px;
+    padding:40px 70px;
+    transition: transform 0.3s ease-in, background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+.box:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transform: translateY(-10px);
+}
+@media(max-width:1200px){
+    .hero h1{
+ font-size: 42px;
+    }
+    .hero h2{
+        font-size: 26px;
+    }
+    .box{
+        padding: 20px 70px;
+    }
+}
+@media(max-width:600px){
+.hero h1{
+    font-size: 35px;
+}
+.box{
+    padding: 20px;
+
+}
+}
+.howItWorks{
+    background-color: #DFDF07;
+   margin-top: 150px;
+   padding: 30px 0px;
+}
+.howItWorks h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.howItWorks .card{
+    background-color: #FFFFFF;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in, color 0.3s ease-in,background-color 0.3s ease-in;
+}
+
+.howItWorks .card .icon{
+height: 50px;
+width: 50px;
+border-radius: 50%;
+background-color: black;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 10px;
+overflow-x: visible;
+}
+.howItWorks .card .icon span{
+    font-size: 35px;
+}
+.howItWorks .card h2{
+font-size: 24px;
+font-weight: 500;
+margin-bottom: 10px;
+}
+.howItWorks .card p{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(128, 128, 128);
+}
+.howItWorks .card:hover{
+    background-color: black;
+    color: #FFFFFF;
+    transform: translateY(-10px);
+}
+.howItWorks .card:hover .icon{
+    background-color: white;
+    color: black;
+}
+@media(max-width:600px){
+    .howItWorks{
+        padding:15px -10px;
+    }
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+@media(max-width:900px){
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width:700px){
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+.niches{
+margin-top: 100px;
+margin: 100px auto;
+}
+.niches h1{
+    text-align: center;
+    color: #DFDF07;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.niches .card{
+    background-color: black;
+    color: white;
+    padding: 30px 10px;
+    transition: color 0.3s ease-in, background-color 0.3s ease-in;
+    border-radius: 5px;
+}
+.niches .card h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+.niches .card p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.niches .card:hover{
+    background-color: #DFDF07;
+    color: black;
+}
+.auth{
+    margin-top: 100px;
+}
+.auth h1{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+}
+.auth .wrapper{
+    display: flex;
+    gap: 20px;
+}
+.inputTag{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.loginAuth{
+    margin-bottom: 20px;
+}
+
+.loginAuth .inputTag{
+width: 50%;
+}
+.loginAuth button{
+    display: block;
+    width: 50%;
+}
+.forgotPassword{
+    margin-top: 3px;
+}
+.forgotPassword a{
+    text-decoration: none;
+    cursor: pointer;
+}
+@media(max-width:900px){
+    .loginAuth .inputTag,.loginAuth button{
+        width: 100%;
+        } 
+}
+.inputTag div{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+.inputTag div input,.inputTag div select,.inputTag div textarea{
+    width: 100%;
+    background-color: #87878778;
+    padding: 10px;
+    border: none; 
+    outline: none;
+}
+.inputTag div .icon,.inputTag div .s_icon{
+    width: 10%;
+    background-color: #dfdf07;
+    height: 40px;
+    padding: 8px;
+}
+.inputTag div .s_icon{
+    height: 41px!important;
+}
+.inputTag label{
+    margin-top: 10px;
+}
+.color-btn,.without-color-btn{
+    margin-top: 20px;
+    background-color: #dfdf07;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.without-color-btn{
+    background-color: transparent;
+    border: 2px solid #dfdf07;
+}
+.without-color-btn a{
+    text-decoration: none;
+    color: #DFDF07;
+}
+@media(max-width:900px){
+    .wrapper{
+        flex-direction: column;
+    }
+}
+
+/*navbar */
+.navbar img{
+    max-width: 100px;
+    height: auto;
+}
+
+.navbar .bigScreen{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .bigScreen div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: max-height 0.3s ease-in-out;
+}
+.navbar .bigScreen div a{
+    text-decoration: none;
+    color: black;
+}
+.navbar svg{
+    display: none;
+}
+
+@media(max-width:800px){
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar svg{
+        display: flex;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+  .navbar .bigScreen{
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 13px;
+  }
+  .navbar .bigScreen div{
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+  
+  }
+  .navbar .bigScreen .active{
+    max-height: 200px;
+  }
+  .navbar .bigScreen div{
+   max-height: 0px;
+  }
+}
+
+/* Jobs */
+.jobs{
+    margin-top: 50px;
+}
+.jobs .serchBar{
+   margin: 0 auto;
+    border: 1px solid rgb(128, 128, 128);
+    width: 40%;
+    padding: 5px;
+    border-radius: 6px;
+    
+}
+.serchBar input{
+    border: none;
+    outline: none;
+    width: 85%;
+}
+.serchBar button{
+    background-color: #DFDF07;
+    border: none;
+    outline: none;
+    padding: 4px 0px;
+    border-radius: 3px;
+    width: 15%;    
+    cursor: pointer;
+}
+
+.jobsMain{
+    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+ gap:10px;
+}
+
+.jobsMain .sidebar{
+    grid-column: 1/4;
+}
+.jobLabelDiv{
+    margin-top: 3px;
+}
+.jobsMain .sidebar h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+.jobsMain .sidebar hr{
+    margin-bottom: 10px;
+    color:rgb(128, 128, 128);
+    width: 70%;
+}
+.jobsMain .sidebar label{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 7px;
+}
+.jobsMain .jobsContainer{
+    grid-column: 4/13;    
+}
+.jobsContainer .displayJobs{
+    display: grid;
+grid-template-columns: repeat(2,1fr);
+align-content: start;
+gap: 20px;
+}
+.mobile_filter{
+    display: none;
+    margin-bottom: 20px;    
+}
+.mobile_filter select{
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+@media(max-width:980px){
+   
+    .jobsMain .jobsContainer{
+        grid-column: 1/13;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .mobile_filter{
+        display: flex;
+        gap: 10px;
+    }
+    .jobsMain .sidebar{
+       display: none;
+    }
+    .jobs .serchBar{
+        width: 100%;
+    }
+  
+}
+@media(max-width:420px){
+    .serchBar button{
+        width: 20%;
+    }
+    .serchBar input{
+        width: 80%;
+    }
+    .mobile_filter select{
+        padding: 5px 0px;
+    }
+}
+@media(max-width:650px){
+    .jobsMain .displayJobs{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+.jobsMain .displayJobs .jobsCard{
+    background: #f5f5f5;
+    max-width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+  
+}
+.jobsCard h4{
+    margin-top: 5px;
+    margin-left: 5px;
+font-size: 18px;
+font-weight: 500;
+}
+.jobsCard p{
+    color: rgb(128, 128, 128);
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.jobsCard span{
+    margin-left: 5px;
+ color: black;   
+ font-size: 15px;
+ font-weight: 500;
+}
+.hiring{
+    color: rgb(0, 145, 255)!important;
+    background: rgba(0, 145, 255, 0.338)!important;
+    width: fit-content;
+    font-size: 15px;
+    border-radius: 4px;
+    padding:2px 5px;
+    margin-bottom: 5px;
+}
+.hiring-multiple{
+    color: #008b00!important;
+    background: #008b0033!important;
+    width: fit-content;
+    font-size: 15px;
+    border-radius: 4px;
+    padding:2px 5px;
+}
+.btn-wrapper{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+.jobsCard button{
+    background-color: #DFDF07;
+    border: none;
+    outline:none;
+    padding: 6px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.jobsCard button a{
+    text-decoration: none;
+    color: black;
+}
+.application{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    margin:50px auto;
+}
+@media(max-width:800px){
+    .application{
+        grid-template-columns: repeat(1,1fr);
+        padding: 20px;
+    }
+    .jobSection{
+    order: -1;
+    }
+}
+@media(max-width:600px){
+    .application{
+        padding: 0px;
+    }
+}
+.application .formSection .inputTag input{
+padding: 7px;
+}
+.application h3{
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+.application p{   
+    margin-bottom: 3px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: gray;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.application svg{
+    color: black;
+}
+.application li{
+    color: gray;
+    font-size: 13px;
+    flex-wrap: 500;
+}
+.application .btn-wrapper button{
+background-color: #DFDF07;
+color: black;
+padding: 10px 40px;
+border-radius: 6px;
+border: none;
+outline: none;
+cursor: pointer;
+font-size: 15px;
+}
+.applicationCard{
+   background-color: #EEEEEE;
+   width: 80%;
+   padding:20px;
+   margin-top: 20px;
+}
+.applicationCard h3{
+    font-size: 17px;
+    font-weight: 600;
+}
+.applicationsBtn{
+    display: flex;
+    justify-content: end;
+    align-items:center;
+    margin-top: 40px;
+    gap: 20px;
+}
+.applicationCard button,.applicationCard a{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #dfdf07!important;
+    color: black!important;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500!important;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+.applicationCard .deleteBtn{
+   background-color: transparent!important;
+   border: 2px solid #dfdf07;
+}
+.applicationCard .deleteBtn:hover{
+background-color: #dfdf07!important;
+border: none;
+}
+
+
+.dashboard{
+    margin: 30px auto;
+
+}
+.dashboardContainer{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 20px;
+    margin-top: 30px;
+    position: relative;
+}
+.dashboard .sideBar{
+grid-column: 1/4;
+}
+
+.dashboard .sideBar h2,.mobile-sidebar h2{
+    font-size: 22px;
+    font-weight: 600;
+}
+.dashboard .sideLinks,.mobile-sidebar .sideLinks{
+margin-top: 20px;
+}
+.dashboard .sideLinks button,.mobile-sidebar .sideLinks button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(128, 128, 128);
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.dashboard .dashboardMain{
+grid-column: 4/13;
+}
+
+.dashboard .dashboardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashboard .dashboardHeader span{
+    color: #DFDF07;
+   margin-left: 5px;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+}
+.profile h2,.profileComponents h2{
+    font-size: 22px;
+    color: #dfdf07;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+.profile label{
+    margin-top: 10px;
+}
+.profile input,.profile textarea,.profile select{
+    width: 80%;
+    padding: 7px 0px;  
+}
+.updatePassword .inputTag{
+    width: 80%;
+    padding: 7px 0px; 
+}
+.profileNiches{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.profile a,.profileComponents .btns .btn{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 8px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    align-self: self-start;
+    cursor: pointer;
+}
+.profileComponents .btn,.postJob .btn{
+    align-self: flex-start;
+    padding:10px 6px;
+    background-color: #DFDF07;
+    color: black;
+    border: none;     
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 14px;
+    cursor: pointer;
+}
+.postJob .profile .btn{
+    padding: 8px 30px;
+    margin-top: 10px;
+    margin-left:auto ;
+}
+
+.profileComponents .btns .btn{
+    background-color: #DFDF07;
+    color: black;
+}
+
+.btns{
+    display: flex;
+   justify-content: space-between;
+   width: 80%;
+}
+.myJobCard{
+    background-color: #EEEEEE;
+    width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.myJobCard h3{
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 3px;
+}
+.myJobCard p{
+    font-size: 15px;
+    color: gray;
+    margin-top: 3px;
+}
+.myJobCard button{
+    background-color: #dfdf07;
+    color: black;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.mobile-sidebar {
+    background-color: #EEEEEE;
+    transform: translateX(-100vw);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top:50px;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+}
+.dashIcon{
+   height: 30px; 
+   width: 30px;
+   border-radius: 50%;
+   color: white;
+   font-size: 18px;
+    cursor: pointer;
+   display: flex;
+   justify-content:center ;
+   align-items: center;
+   background-color: black;
+   display: none;
+
+}
+@media(max-width:900px){
+    
+    .dashboardContainer{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .dashIcon{
+        display: flex;
+    }
+    .show-sidebar {
+        transform: translateX(0);
+    }
+    .dashboard .sideBar{
+        display: none;
+    }
+    .dashboard .dashboardMain{
+        grid-column: 1/14;
+       
+    }
+    .profile input,.profile textarea,.profile select{
+        width: 100%;
+        padding: 7px 0px;  
+    }
+    .myJobCard{
+        width: 100%;
+    }
+    .postJob .profile .btns{
+       width: 100%;
+    }
+    .updatePassword .inputTag{
+        width: 100%;
+    }
+}
+
+.forgotPasswords{
+   height: 80vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.forgotPasswords form{
+   min-width: 40%;
+    min-height: 250px;
+   background-color: #EEEEEE;
+   border-radius: 5px;
+   display: flex;
+   gap: 10px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.forgotPasswords h2{
+    font-size: 18px;
+    font-weight: 600;
+    align-self: flex-start;
+    margin-left: 50px;
+}
+@media(max-width:900px){
+    .forgotPasswords form{
+        min-width: 60%;
+    }
+    .forgotPasswords h2{
+        margin-left: 30px;
+    }
+}
+@media(max-width:600px){
+    .forgotPasswords form{
+        min-width: 100%;
+    }
+}
+.forgotPasswords form input{
+    width: 80%;
+    padding: 8px 0px;
+   
+}
+.forgotPasswords form button{
+    align-self: flex-start;
+    margin-left: 10%;
+    background-color: #dfdf07;
+    color: black;
+    border: none;
+    outline: none;
+    border-radius:6px ;
+     padding: 8px 30px;
+     font-size: 16px;
+     font-weight: 500;
+     cursor: pointer;
+     margin-top: 10px;
+} 
+.footer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    background-color: black;
+    color: rgb(128, 128, 128);
+    padding: 20px 10px;
+    min-height: 200px;
+    margin-top:50px;
+}
+
+.footer h2{
+    color: white;
+}
+.footer .logo img{
+    height: 100px;
+}
+.logo{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.cols p{
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: left;
+}
+.cols a{
+    text-decoration: none;
+    color: rgb(128, 128, 128);
+    margin-left: 5px;
+    font-weight: 500;
+}
+.cols{
+    display: flex;
+    flex-direction: column;
+}
+@media(max-width:900px){
+    .footer{
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px;
+    }
+    .logo img{
+        align-self: flex-start;
+    }
+}
+@media(max-width:600px){
+    .footer{
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+    }
+    .logo img{
+      align-self: center;
+      margin-bottom: 20px;
+    }
+}
