@@ -64,7 +64,7 @@ reducers:{
 export const updateProfile=(data)=>async(dispatch)=>{
   dispatch(updateProfileSlice.actions.requestForUpdateProfile());
  try{
-     const response=await axios.put('http://localhost:4000/user/v1/updateUser',data,{
+     const response=await axios.put('https://job-board-nqyy.vercel.app/user/v1/updateUser',data,{
         withCredentials:true,
         headers: {'Content-Type':'multipart/form-data' },
      })
@@ -77,7 +77,7 @@ export const updateProfile=(data)=>async(dispatch)=>{
 export const updatePassword=(data)=>async(dispatch)=>{
   dispatch(updateProfileSlice.actions.requestForPasswordUpdate());
   try{
-  const response=await axios.put('http://localhost:4000/v1/updatePassword',data,{
+  const response=await axios.put('https://job-board-nqyy.vercel.app/user/v1/updatePassword',data,{
     headers:{'Content-Type':'application/json'},
     withCredentials:true
   });

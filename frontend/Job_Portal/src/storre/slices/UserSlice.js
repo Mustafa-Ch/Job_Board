@@ -152,7 +152,7 @@ const userSlice=createSlice({
 export const register=(userData)=>async(dispatch)=>{
 dispatch(userSlice.actions.requestForRegister());
 try {
-    const response=await axios.post('http://localhost:4000/user/v1/createUser',userData,{
+    const response=await axios.post('https://job-board-nqyy.vercel.app/user/v1/createUser',userData,{
         withCredentials:true,
         headers:{'Content-Type':'multipart/form-data'}
     })
@@ -166,7 +166,7 @@ try {
 export const login=(userData)=>async(dispatch)=>{
     dispatch(userSlice.actions.requestForLogin());
     try{
-      const response=await axios.post(' http://localhost:4000/user/v1/loginUser',userData,{
+      const response=await axios.post(' https://job-board-nqyy.vercel.app/user/v1/loginUser',userData,{
         withCredentials:true,
         headers: { "Content-Type": "application/json" },
       });
@@ -181,7 +181,7 @@ export const login=(userData)=>async(dispatch)=>{
 export const fetchUser=()=>async(dispatch)=>{
    dispatch(userSlice.actions.requestForFetchUser());
    try{
-    const response=await axios.get('http://localhost:4000/user/v1/getUser',{
+    const response=await axios.get('https://job-board-nqyy.vercel.app/user/v1/getUser',{
         withCredentials:true
     });
    
@@ -194,7 +194,7 @@ export const fetchUser=()=>async(dispatch)=>{
 
 export const logout=()=>async(dispatch)=>{
     try{
-     const response=await axios.get(' http://localhost:4000/user/v1/logoutUser',{
+     const response=await axios.get(' https://job-board-nqyy.vercel.app/user/v1/logoutUser',{
         withCredentials:true
      })
      dispatch(userSlice.actions.successForLogout(response.data.message));
@@ -206,7 +206,7 @@ export const logout=()=>async(dispatch)=>{
 export const forgotPasword=(data)=>async(dispatch)=>{
  dispatch(userSlice.actions.requestForForgotPassword());
  try{
-   const response=await axios.post(' http://localhost:4000/user/v1/forgotPassword',data,{
+   const response=await axios.post(' https://job-board-nqyy.vercel.app/user/v1/forgotPassword',data,{
     headers:{'Content-Type':'application/json'},
     withCredentials:true
    })
@@ -219,7 +219,7 @@ dispatch(userSlice.actions.failedForgotPassword(error.response.data.message));
 export const resetPassword=(data,token)=>async(dispatch)=>{
 dispatch(userSlice.actions.requestForResetPassword());
 try{
-const response=await axios.put(` http://localhost:4000/user/v1/resetPassword/${token}`,data,{
+const response=await axios.put(` https://job-board-nqyy.vercel.app/user/v1/resetPassword/${token}`,data,{
     withCredentials:true,
     headers:{'Content-Type':'application/json'}
 });
@@ -233,7 +233,7 @@ dispatch(userSlice.actions.failedResetPassword(error.response.data.message));
 export const verifiedMail=()=>async(dispatch)=>{
     dispatch(userSlice.actions.requestForVerifiedMail());
    try{
-     const response=await axios.get('http://localhost:4000/user/v1/verifiedMail',{
+     const response=await axios.get('https://job-board-nqyy.vercel.app/user/v1/verifiedMail',{
         withCredentials:true
      });
    
@@ -247,7 +247,7 @@ export const verifiedMail=()=>async(dispatch)=>{
 export const mailVerification=(id)=>async(dispatch)=>{
     dispatch(userSlice.actions.requestForVerifiedMail());
     try{
-      const response=await axios.put(`http://localhost:4000/user/v1/mailVerification/${id}`,{
+      const response=await axios.put(`https://job-board-nqyy.vercel.app/user/v1/mailVerification/${id}`,{
          withCredentials:true
       });
       dispatch(userSlice.actions.successForMailVerification(response.data.message));

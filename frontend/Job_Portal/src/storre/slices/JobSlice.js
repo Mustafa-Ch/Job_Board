@@ -103,7 +103,7 @@ const jobSlice=createSlice({
 export const deleteJob=(id)=>async(dispatch)=>{
     dispatch(jobSlice.actions.requestForDeleteJob());
     try{
-      const response=await axios.delete(`http://localhost:4000/job/v1/deleteJob/${id}`,{withCredentials:true});
+      const response=await axios.delete(`https://job-board-nqyy.vercel.app/job/v1/deleteJob/${id}`,{withCredentials:true});
       dispatch(jobSlice.actions.successForDeleteJob(response.data.message))
       dispatch(jobSlice.actions.clearAllError());
     }catch(error){
@@ -113,7 +113,7 @@ export const deleteJob=(id)=>async(dispatch)=>{
 export const fetchJobs=(city,niche,searchKeyword)=>async(dispatch)=>{
 try {
     dispatch(jobSlice.actions.requestForAllJobs());
-let link=" http://localhost:4000/job/v1/getAllJobs?";
+let link=" https://job-board-nqyy.vercel.app/job/v1/getAllJobs?";
 
 const query=[];
 if(city){
@@ -138,7 +138,7 @@ dispatch(jobSlice.actions.clearAllError())
 export const fetchSingleJob=(id)=>async(dispatch)=>{
    dispatch(jobSlice.actions.requestForSingleJob());
    try{
-    const response=await axios.get(` http://localhost:4000/job/v1/getSingleJob/${id}`,{withCredentials:true});
+    const response=await axios.get(` https://job-board-nqyy.vercel.app/job/v1/getSingleJob/${id}`,{withCredentials:true});
     dispatch(jobSlice.actions.successForSingleJob(response.data.job));
     dispatch(jobSlice.actions.clearAllError())
  
@@ -149,7 +149,7 @@ export const fetchSingleJob=(id)=>async(dispatch)=>{
 export const MyyJobs=()=>async(dispatch)=>{
    dispatch(jobSlice.actions.requestForMyJob());
    try{
-      const response=await axios.get(' http://localhost:4000/job/v1/getMyJobs',{withCredentials:true});
+      const response=await axios.get('https://job-board-nqyy.vercel.app/job/v1/getMyJobs',{withCredentials:true});
       dispatch(jobSlice.actions.successForMyJobs(response.data));
       dispatch(jobSlice.actions.clearAllError());
    }catch(error){
@@ -159,7 +159,7 @@ export const MyyJobs=()=>async(dispatch)=>{
 export const postJob=(data)=>async(dispatch)=>{
     dispatch(jobSlice.actions.requestForPostJob());
     try{
-       const response=await axios.post(' http://localhost:4000/job/v1/postJob',data,{
+       const response=await axios.post(' https://job-board-nqyy.vercel.app/job/v1/postJob',data,{
         withCredentials:true,
         headers:{'Content-Type':'application/json'} 
        });

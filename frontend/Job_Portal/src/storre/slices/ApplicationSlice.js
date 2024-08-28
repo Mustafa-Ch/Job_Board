@@ -92,7 +92,7 @@ reducers:{
 export const postApplication=(data,jobId)=>async(dispatch)=>{
      dispatch(applicationSlice.actions.requestForPostApplications());
      try{
-        const response=await axios.post(` http://localhost:4000/application/v1/postApplication/${jobId}`,data,{withCredentials:true,
+        const response=await axios.post(` https://job-board-nqyy.vercel.app/application/v1/postApplication/${jobId}`,data,{withCredentials:true,
             headers:{'Content-Type':'multipart/form-data','Content-Type':'application/json'},
         });
         dispatch(applicationSlice.actions.successForPostApplications(response.data.message));
@@ -105,7 +105,7 @@ export const postApplication=(data,jobId)=>async(dispatch)=>{
 export const employerApplications=()=>async(dispatch)=>{
     dispatch(applicationSlice.actions.requestForAllApplications());
     try{
-      const response=await axios.get('http://localhost:4000/application/v1/employerApplications',{withCredentials:true});
+      const response=await axios.get('https://job-board-nqyy.vercel.app/application/v1/employerApplications',{withCredentials:true});
       dispatch(applicationSlice.actions.successForAllApplications(response.data.applications));
       dispatch(applicationSlice.actions.clearAllApplicationError());
      
@@ -116,7 +116,7 @@ export const employerApplications=()=>async(dispatch)=>{
 export const jobSeekerApplications=()=>async(dispatch)=>{
     dispatch(applicationSlice.actions.requestForMyApplications());
     try{
-     const response=await axios.get(' http://localhost:4000/application/v1/jobSeekerApplications',{
+     const response=await axios.get(' https://job-board-nqyy.vercel.app/application/v1/jobSeekerApplications',{
         withCredentials:true
      });
      dispatch(applicationSlice.actions.successForMyApplications(response.data));
@@ -128,7 +128,7 @@ export const jobSeekerApplications=()=>async(dispatch)=>{
 export const deleteApplication=(id)=>async(dispatch)=>{
 dispatch(applicationSlice.actions.requestForDeleteApplication());
 try{
-  const response=await axios.delete(` http://localhost:4000/application/v1/deleteApplication/${id}`,{
+  const response=await axios.delete(` https://job-board-nqyy.vercel.app/application/v1/deleteApplication/${id}`,{
    withCredentials:true
   });
     dispatch(applicationSlice.actions.successForDeleteApplication(response.data.message));
