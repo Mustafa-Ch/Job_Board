@@ -48,10 +48,7 @@ const Register = () => {
     const file=e.target.files[0];
     setResume(file)
   };
-  const handleAvatar=(e)=>{
-   const file=e.target.files[0];
-   setAvatar(file);
-  }
+ 
   const {loading,isAuthenticated,error,message}=useSelector(state=>state.user);
  
   const dispatch=useDispatch();
@@ -70,7 +67,6 @@ const Register = () => {
   formData.append('firstNiche',firstNiche);
  formData.append('secondNiche',secondNiche);
  formData.append('thirdNiche',thirdNiche);
- formData.append('avatar',avatar);
  formData.append('resume',resume);
  formData.append('coverLetter',coverLetter);
 }
@@ -214,14 +210,6 @@ dispatch(register(formData))
  
       </div>
      </div>
-     <div className='inputTag'>
-      <label>Upload Avatar</label>
-      <div>
-      <input type='file' onChange={handleAvatar}/>
-   
-      </div>
-     </div>
-    
      </div>
     <div className='wrapper'>
       <div className='inputTag'>

@@ -14,7 +14,6 @@ function UpdateProfile() {
     const [firstNiche,setFirstNiche]=useState(user&&user.role=='Job Seeker'&&user.niches.firstNiche);
     const [secondNiche,setSecondNiche]=useState(user&&user.role=='Job Seeker'&&user.niches.secondNiche);
     const [thirdNiche,setThirdNiche]=useState(user&&user.role=='Job Seeker'&&user.niches.thirdNiche);
-    const [avatar,setAvatar]=useState(user&&user.avatar&&user.avatar.url);
     const [resume,setResume]=useState(user&&user.role=='Job Seeker'&&user.resume.url);
     const [address,setAddress]=useState(user&&user.address);
     const [phone,setPhone]=useState(user&&user.phone);
@@ -25,10 +24,7 @@ function UpdateProfile() {
        const file=e.target.files[0];
        setResume(file);
     }
-    const handleAvatar=(e)=>{
-       const file=e.target.files[0];
-       setAvatar(file);
-    }
+   
     const handleSubmit=(e)=>{
         e.preventDefault();
         const formData=new FormData();
@@ -94,14 +90,6 @@ function UpdateProfile() {
                 <>
                 <label>Resume</label>
                 <input  type='file' onChange={handleResume}/>
-                </> 
-            )
-         }
-         {
-            user&&user.avatar&&(
-                <>
-                <label>Avatar</label>
-                <input  type='file' onChange={handleAvatar}/>
                 </> 
             )
          }
