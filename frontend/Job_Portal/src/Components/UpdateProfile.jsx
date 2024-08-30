@@ -11,7 +11,7 @@ function UpdateProfile() {
     const {error,message,isUpdated}=useSelector(state=>state.updateUser);
     const [fullName,setFullName]=useState(user&&user.fullName);
     const [email,setEmail]=useState(user&&user.email);
-    const [firstNiche,setFirstNiche]=useState(user&&user.role=='Job Seeker'&&niches.firstNiche);
+    const [firstNiche,setFirstNiche]=useState(user&&user.role=='Job Seeker'&&user.niches.firstNiche);
     const [secondNiche,setSecondNiche]=useState(user&&user.role=='Job Seeker'&&user.niches.secondNiche);
     const [thirdNiche,setThirdNiche]=useState(user&&user.role=='Job Seeker'&&user.niches.thirdNiche);
     const [avatar,setAvatar]=useState(user&&user.avatar&&user.avatar.url);
