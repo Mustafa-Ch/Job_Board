@@ -1,18 +1,15 @@
-// middleware/multer.js
-
 const multer = require("multer");
 const path = require("path");
-const fs = require("fs");
 
-console.log("i am from multer");
-// Multer storage configuration
+// Multer storage configuration for serverless environment
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../public/images"));
+    // Saving files in the /tmp directory
+    cb(null, '/tmp');
   },
   filename: (req, file, cb) => {
     // Generating a unique file name
-    const fileName = `${Math.floor(Math.random() * 1e9)}-${file.originalname}`;
+    const fileName = `${Math.floor(Math.random() * 1e9)}-${Date.now()}-${file.originalname}`;
     cb(null, fileName);
   },
 });
